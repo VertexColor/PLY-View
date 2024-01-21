@@ -23,7 +23,7 @@
 const char appTitle[]="PLY Viewer";
 uint winw=1024, winh=768;
 GLFWwindow* wnd;
-mat projection, model;\
+mat projection, model;
 void updateModel(){glUniformMatrix4fv(modelview_id, 1, GL_FALSE, (float*)&model.m[0][0]);}
 
 // load model from file to gpu memory with a permanent 12 MB staging buffer
