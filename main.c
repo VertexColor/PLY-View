@@ -156,7 +156,7 @@ int main(int argc, char** argv)
     // render loop
     while(!glfwWindowShouldClose(wnd))
     {
-        // Poll GLFW events so that we know when the window is closed
+        // poll events so that we know when the window is closed
         glfwPollEvents(); 
 
         // clear buffer
