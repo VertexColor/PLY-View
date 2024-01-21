@@ -288,7 +288,7 @@ const GLchar* v1 =
     "uniform mat4 projection;\n"
     "uniform vec3 color;\n"
     "uniform float ambient;\n"
-    "uniform float saturation;\n"
+    "uniform float saturate;\n"
     "uniform float opacity;\n"
     "uniform vec3 lightpos;\n"
     "attribute vec4 position;\n"
@@ -299,7 +299,7 @@ const GLchar* v1 =
         "vec4 vertPos4 = modelview * position;\n"
         "vec3 vertNorm = normalize(vec3(modelview * vec4(normal, 0.0)));\n"
         "vec3 lightDir = normalize(lightpos - (vertPos4.xyz / vertPos4.w));\n"
-        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturation)), opacity);\n"
+        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturate)), opacity);\n"
         "gl_Position = projection * vertPos4;\n"
     "}\n";
 // color array + normal array ]- vertex shader
@@ -308,7 +308,7 @@ const GLchar* v2 =
     "uniform mat4 modelview;\n"
     "uniform mat4 projection;\n"
     "uniform float ambient;\n"
-    "uniform float saturation;\n"
+    "uniform float saturate;\n"
     "uniform float opacity;\n"
     "uniform vec3 lightpos;\n"
     "attribute vec4 position;\n"
@@ -320,7 +320,7 @@ const GLchar* v2 =
         "vec4 vertPos4 = modelview * position;\n"
         "vec3 vertNorm = normalize(vec3(modelview * vec4(normal, 0.0)));\n"
         "vec3 lightDir = normalize(lightpos - (vertPos4.xyz / vertPos4.w));\n"
-        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturation)), opacity);\n"
+        "fragcolor = vec4((color*ambient) + (color * min(max(dot(lightDir, vertNorm), 0.0), saturate)), opacity);\n"
         "gl_Position = projection * vertPos4;\n"
     "}\n";
 const GLchar* f1 =  // fragment shader
