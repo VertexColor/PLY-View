@@ -596,7 +596,7 @@ void shadeFullbrightSolid(GLint* position, GLint* projection, GLint* modelview, 
     *modelview = shdFullbrightSolid_modelview;
     *color = shdFullbrightSolid_color;
     *opacity = shdFullbrightSolid_opacity;
-    glUseProgram(shdFullbright);
+    glUseProgram(shdFullbrightSolid);
 }
 void shadeFullbright(GLint* position, GLint* projection, GLint* modelview, GLint* color, GLint* opacity)
 {
